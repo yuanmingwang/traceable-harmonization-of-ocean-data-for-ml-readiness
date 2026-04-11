@@ -1,0 +1,123 @@
+netcdf scalar_1189656_47fa_b75b_78cd.nc {
+  dimensions:
+    timeseries = 1;
+    obs = 1622;
+    timeseries_id_strlen = 14;
+  variables:
+    char timeseries_id(timeseries=1, timeseries_id_strlen=14);
+      :_Encoding = "ISO-8859-1";
+      :cf_role = "timeseries_id";
+      :ioos_category = "Identifier";
+      :long_name = "Dataset Identifier";
+
+    double latitude(timeseries=1);
+      :_CoordinateAxisType = "Lat";
+      :actual_range = 48.3165166667, 48.3165166667; // double
+      :axis = "Y";
+      :ioos_category = "Location";
+      :long_name = "Latitude";
+      :standard_name = "latitude";
+      :units = "degrees_north";
+
+    double longitude(timeseries=1);
+      :_CoordinateAxisType = "Lon";
+      :actual_range = -126.0502166667, -126.0502166667; // double
+      :axis = "X";
+      :ioos_category = "Location";
+      :long_name = "Longitude";
+      :standard_name = "longitude";
+      :units = "degrees_east";
+
+    double depth(timeseries=1);
+      :_CoordinateAxisType = "Height";
+      :_CoordinateZisPositive = "down";
+      :actual_range = 985.0, 985.0; // double
+      :axis = "Z";
+      :ioos_category = "Location";
+      :long_name = "Depth";
+      :positive = "down";
+      :standard_name = "depth";
+      :units = "m";
+
+    double time(timeseries=1, obs=1622);
+      :_CoordinateAxisType = "Time";
+      :_FillValue = NaN; // double
+      :actual_range = 1.378882838995E9, 1.399307438966E9; // double
+      :axis = "T";
+      :ioos_category = "Time";
+      :long_name = "Time";
+      :standard_name = "time";
+      :time_origin = "01-JAN-1970 00:00:00";
+      :time_precision = "1970-01-01T00:00:00.000Z";
+      :units = "seconds since 1970-01-01T00:00:00Z";
+
+    double oxygen_uncorrected(timeseries=1, obs=1622);
+      :_FillValue = NaN; // double
+      :actual_range = 0.31631720142508557, 0.4647209881318634; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Dissolved O2";
+      :long_name = "Volume Fraction Of Oxygen In Sea Water";
+      :standard_name = "volume_fraction_of_oxygen_in_sea_water";
+      :units = "ml/l";
+
+    double temperature(timeseries=1, obs=1622);
+      :_FillValue = NaN; // double
+      :actual_range = 276.36609278566254, 277.1642632038345; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Temperature";
+      :long_name = "Sea Water Temperature";
+      :standard_name = "sea_water_temperature";
+      :units = "K";
+
+    double oxygen_corrected(timeseries=1, obs=1622);
+      :_FillValue = NaN; // double
+      :actual_range = 0.26085314217010896, 0.38268277472247675; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Dissolved O2";
+      :long_name = "Volume Fraction Of Oxygen In Sea Water";
+      :standard_name = "volume_fraction_of_oxygen_in_sea_water";
+      :units = "ml/l";
+
+  // global attributes:
+  :cdm_data_type = "TimeSeries";
+  :cdm_timeseries_variables = "timeseries_id,longitude,depth,latitude";
+  :contributor_name = "Ocean Networks Canada Society,Ocean Networks Canada Society,Ocean Networks Canada Society";
+  :contributor_role = "Custodian,Owner,Publisher";
+  :Conventions = "COARDS, CF-1.10, ACDD-1.3";
+  :device_id = "23050";
+  :device_name = "Sea-Bird SBE 63 Dissolved Oxygen Sensor 630281";
+  :DOI = "https://doi.org/10.34943/cf3770ec-8ab4-42b7-9603-aca1a301f3d5";
+  :Easternmost_Easting = -126.0502166667; // double
+  :featureType = "TimeSeries";
+  :geospatial_lat_max = 48.3165166667; // double
+  :geospatial_lat_min = 48.3165166667; // double
+  :geospatial_lat_units = "degrees_north";
+  :geospatial_lon_max = -126.0502166667; // double
+  :geospatial_lon_min = -126.0502166667; // double
+  :geospatial_lon_units = "degrees_east";
+  :geospatial_vertical_max = 985.0; // double
+  :geospatial_vertical_min = 985.0; // double
+  :geospatial_vertical_positive = "down";
+  :geospatial_vertical_units = "m";
+  :history = "2026-04-11T03:53:49Z (source database)
+2026-04-11T03:53:49Z https://dap.oceannetworks.ca/erddap/tabledap/scalar_1189656.ncCFMA?timeseries_id,time,oxygen_uncorrected,temperature,oxygen_corrected,latitude,longitude,depth&time%3E=2013-09-10T16:08:33Z&time%3C=2014-05-05T18:08:36Z";
+  :id = "scalar_1189656";
+  :infoUrl = "https://oceannetworks.ca";
+  :institution = "Ocean Networks Canada Society";
+  :keywords = "Earth Science > Oceans > Ocean Chemistry > Oxygen";
+  :keywords_vocabulary = "https://vocab.nerc.ac.uk/collection/P64/current/";
+  :license = "Refer to the Ocean Networks Canada data policy at http://www.oceannetworks.ca/data-tools/data-help/data-policy.";
+  :modify_by = "89010";
+  :modify_date = "2020-03-31 20:12:24.068";
+  :Northernmost_Northing = 48.3165166667; // double
+  :publisher_email = "datastewardship@oceannetworks.ca";
+  :publisher_url = "https://oceannetworks.ca";
+  :sourceUrl = "(source database)";
+  :Southernmost_Northing = 48.3165166667; // double
+  :summary = "abstract: English = The Sea-Bird SBE 63 Dissolved Oxygen Sensor 630281 was deployed on 2013-09-10 at Barkley Canyon Axis. Barkley Canyon Axis is located within Barkley Canyon, where benthic processes, biodiversity, sediment dynamics are observed. This device is a Oxygen Sensor. Oxygen sensors measure dissolved oxygen concentration in seawater. It was deployed on a fixed platform. Data from this deployment were archived and made available through Ocean Networks Canada's Oceans 3.0 digital infrastructure, with quality assurance and derived data products following established practices., abstract: French = Ce Sea-Bird SBE 63 Dissolved Oxygen Sensor 630281 a été déployé le 2013-09-10 au Barkley Canyon Axis . Barkley Canyon Axis est situé dans Barkley Canyon, où les processus benthiques, la biodiversité et la dynamique des sédiments sont observés. Cet instrument est un Capteur d'Oxygène. Les capteurs d'oxygène mesurent la concentration d'oxygène dissous dans l'eau de mer. Il a été deployé sur une plateforme fixe. Les données de ce déploiement sont archivées et accessibles sur l’infrastructure numérique Oceans 3.0 du Réseau Canadien des Océans (ONC), avec assurance de la qualité et produits dérivés selon les conventions établies.";
+  :time_coverage_end = "2014-05-05T16:30:38.966Z";
+  :time_coverage_resolution = "PT3H30M";
+  :time_coverage_start = "2013-09-11T07:00:38.995Z";
+  :title = "Barkley Canyon Axis Oxygen Sensor Deployed 2013-09-10 | Barkley Canyon Axis  Capteur d'Oxygène déployé 2013-09-10";
+  :Westernmost_Easting = -126.0502166667; // double
+}

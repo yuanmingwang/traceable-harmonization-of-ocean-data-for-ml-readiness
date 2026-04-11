@@ -1,0 +1,200 @@
+netcdf profile_1214852_12474_4c09_6193_5467.nc {
+  dimensions:
+    profile = 1;
+    obs = 10;
+    profile_id_strlen = 21;
+  variables:
+    char profile_id(profile=1, profile_id_strlen=21);
+      :_Encoding = "ISO-8859-1";
+      :cf_role = "profile_id";
+      :ioos_category = "Identifier";
+      :long_name = "Dataset Identifier";
+
+    double time(profile=1);
+      :_CoordinateAxisType = "Time";
+      :actual_range = 1.726665483E9, 1.726665483E9; // double
+      :axis = "T";
+      :ioos_category = "Time";
+      :long_name = "Time";
+      :standard_name = "time";
+      :time_origin = "01-JAN-1970 00:00:00";
+      :time_precision = "1970-01-01T00:00:00.000Z";
+      :units = "seconds since 1970-01-01T00:00:00Z";
+
+    double latitude(profile=1);
+      :_CoordinateAxisType = "Lat";
+      :actual_range = 47.801905, 47.801905; // double
+      :axis = "Y";
+      :ioos_category = "Location";
+      :long_name = "Latitude";
+      :standard_name = "latitude";
+      :units = "degrees_north";
+
+    double longitude(profile=1);
+      :_CoordinateAxisType = "Lon";
+      :actual_range = -55.7734161, -55.7734161; // double
+      :axis = "X";
+      :ioos_category = "Location";
+      :long_name = "Longitude";
+      :standard_name = "longitude";
+      :units = "degrees_east";
+
+    double absolute_pressure(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Pressure";
+      :long_name = "Sea Water Pressure";
+      :standard_name = "sea_water_pressure";
+      :units = "dbar";
+
+    double cdom(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 9.044277, 12.112074; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Colored Dissolved Organic Matter";
+      :long_name = "Concentration Of Colored Dissolved Organic Matter In Sea Water Expressed As Equivalent Mass Fraction Of Quinine Sulfate Dihydrate";
+      :standard_name = "concentration_of_colored_dissolved_organic_matter_in_sea_water_expressed_as_equivalent_mass_fraction_of_quinine_sulfate_dihydrate";
+      :units = "ppb QSDE";
+
+    double chlorophyll(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 1.222479, 2.55176; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Mass Concentration Of Chlorophyll In Sea Water";
+      :standard_name = "mass_concentration_of_chlorophyll_in_sea_water";
+      :units = "ug/l";
+
+    double cond(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 2.899507, 3.096333; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Salinity";
+      :long_name = "Sea Water Electrical Conductivity";
+      :standard_name = "sea_water_electrical_conductivity";
+      :units = "S m-1";
+
+    double density(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 1016.69898, 1019.212419; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Sea Water Density";
+      :standard_name = "sea_water_density";
+      :units = "kg m-3";
+
+    double depth(profile=1, obs=10);
+      :_CoordinateAxisType = "Height";
+      :_CoordinateZisPositive = "down";
+      :_FillValue = NaN; // double
+      :actual_range = 2.0, 11.0; // double
+      :axis = "Z";
+      :ioos_category = "Location";
+      :long_name = "Depth";
+      :positive = "down";
+      :standard_name = "depth";
+      :units = "m";
+
+    double oxygen_saturation(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 92.158942, 96.105255; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Fractional Saturation Of Oxygen In Sea Water";
+      :standard_name = "fractional_saturation_of_oxygen_in_sea_water";
+      :units = "1";
+
+    double pressure(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 2.219858, 11.111872; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Pressure";
+      :long_name = "Sea Water Pressure Due To Sea Water";
+      :standard_name = "sea_water_pressure_due_to_sea_water";
+      :units = "dbar";
+
+    double salinity(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 22.845098, 25.648867; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Salinity";
+      :long_name = "Sea Water Practical Salinity";
+      :standard_name = "sea_water_practical_salinity";
+      :units = "1E-03";
+
+    double Sound_Speed(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Speed Of Sound In Sea Water";
+      :standard_name = "speed_of_sound_in_sea_water";
+      :units = "m s-1";
+
+    double Temperature(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :actual_range = 13.00086, 14.669416; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Temperature";
+      :long_name = "Sea Water Temperature";
+      :standard_name = "sea_water_temperature";
+      :units = "K";
+
+    double turbidity(profile=1, obs=10);
+      :_FillValue = NaN; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Optical Properties";
+      :long_name = "Sea Water Turbidity";
+      :standard_name = "sea_water_turbidity";
+      :units = "1";
+
+  // global attributes:
+  :cde_ingest = "false";
+  :cdm_data_type = "Profile";
+  :cdm_profile_variables = "profile_id,time,longitude,latitude";
+  :contributor_name = "MAMKA,Ocean Networks Canada Society,Ocean Networks Canada Society";
+  :contributor_role = "Owner,Custodian,Distributor";
+  :Conventions = "COARDS, CF-1.10, ACDD-1.3";
+  :coverage_content_type = "physicalMeasurement";
+  :date_issued = "2024-12-04T00:21:38.604Z";
+  :date_modified = "2025-05-27T17:10:34.542Z";
+  :device_id = "83552, 79312, 83792, 79372, 79352, 83572";
+  :device_name = "AML-6 LGR A60156, Samsung Galaxy Tab Active3 (SN R52TA09CYBL), JFE Rinko ARO-FT (SN 0FNR014), Turner Cyclops-7F Fluorometer (S/N 900362), Turner Cyclops-7F Fluorometer (S/N 900436), Turner Cyclops-7F Fluorometer (S/N 900473)";
+  :DOI = "https://doi.org/10.34943/be839b3c-6215-47e8-8035-4f43dea1e1ba";
+  :Easternmost_Easting = -55.7734161; // double
+  :featureType = "Profile";
+  :geospatial_lat_max = 47.801905; // double
+  :geospatial_lat_min = 47.801905; // double
+  :geospatial_lat_units = "degrees_north";
+  :geospatial_lon_max = -55.7734161; // double
+  :geospatial_lon_min = -55.7734161; // double
+  :geospatial_lon_units = "degrees_east";
+  :geospatial_vertical_max = 11.0; // double
+  :geospatial_vertical_min = 2.0; // double
+  :geospatial_vertical_positive = "down";
+  :geospatial_vertical_resolution = "1";
+  :geospatial_vertical_units = "m";
+  :history = "2026-04-11T03:43:08Z (source database)
+2026-04-11T03:43:08Z https://dap.oceannetworks.ca/erddap/tabledap/profile_1214852_12474.ncCFMA?profile_id,absolute_pressure,cdom,chlorophyll,cond,density,depth,oxygen_saturation,pressure,salinity,Sound_Speed,Temperature,turbidity,time,latitude,longitude&time%3E=2024-09-18T13:18:03Z&time%3C=2024-09-18T13:18:03Z";
+  :id = "profile_1214852_12474";
+  :infoUrl = "https://oceannetworks.ca";
+  :institution = "Ocean Networks Canada Society";
+  :keywords = "Earth Science > Oceans > Ocean Chemistry > Chlorophyll, Earth Science > Oceans > Ocean Chemistry > Organic Matter > Colored Dissolved Organic Matter, Earth Science > Oceans > Ocean Optics > Turbidity, Earth Science > Oceans > Ocean Pressure > Water Pressure, Earth Science > Oceans > Ocean Temperature > Water Temperature, Earth Science > Oceans > Salinity/Density, Earth Science > Oceans > Salinity/Density > Conductivity, Earth Science > Spectral/Engineering > Sensor Characteristics > Geolocation";
+  :keywords_vocabulary = "https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/46206e8c-8def-406f-9e62-da4e74633a58, https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/7989eae1-8ea3-4039-af0c-9130de145449, https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/f0d83687-bc0a-4491-bb3e-697f1018da13, https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/a46016d7-e571-403a-ab37-7223fd74e68e, https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/dd025312-0d27-44e0-ae05-7cfcc1aa17f0, https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/7041e51c-e2de-405a-b154-6016f624f54f, https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/18e0fad3-b6f4-4120-9221-f82fb2ffd384, https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/Earth%20Science/7a0ab5f9-2317-4217-a081-8d4a46eb5334";
+  :license = "Refer to the Ocean Networks Canada data policy at http://www.oceannetworks.ca/data-tools/data-help/data-policy.";
+  :Northernmost_Northing = 47.801905; // double
+  :processing_text = "Calculation of derived variables: Practical Salinity, Density and Sound Speed are calculated using smoothed Conductivity and smoothed scan-shifted Temperature. Temperature Scan shift ahead = 0, Smoothing: 5-point running mean.; Oxygen data shifted ahead by 18 scans.;  25 median point filter applied to the Chlorophyll data.; 25 median point filter applied to the Coloured Dissolved Organic Matter data.; All data binned into depth bins of: 1m.; Percent Good Acceptance Value: 70.; Re-post process due to station date update on 2025-01-13;";
+  :publisher_email = "info@oceannetworks.ca";
+  :publisher_institution = "Ocean Networks Canada Society";
+  :publisher_type = "Institution";
+  :publisher_url = "https://oceannetworks.ca";
+  :sourceUrl = "(source database)";
+  :Southernmost_Northing = 47.801905; // double
+  :standard_name_vocabulary = "CF Standard Name Table v82";
+  :summary = "The Community Fishers Device Set was deployed on 2024-09-18 13:17:52 to 2024-09-18 13:18:15 at Arran Back Cove at station CF542 (MAMKA-7). Arran Back Cove is a sheltered inlet located within the Bay of d'Espoir on the south coast of Newfoundland, Canada. This cove lies to the rear or inland side of Arran Cove. The dataset includes oceanographic data collected at various depths in the water column by a suite of instruments, during a single profiling deployment known as a 'cast'. A Community Fishers Instrument Set typically includes a CTD (Conductivity, Temperature, and Depth), oxygen sensor(s), fluorometer(s), and a tablet used for GPS and data transfer via the ONC-developed Community Fishers app. This cast was collected with the Community Fishers Set 026. This cast was supported by Ocean Networks Canada Society, custodian, MAMKA, owner, Ocean Networks Canada Society, distributor. Data from this deployment were archived and made available through Ocean Networks Canada's Oceans 3.0 digital infrastructure, with quality assurance and derived data products following established practices.";
+  :time_coverage_duration = "PT23.26S";
+  :time_coverage_end = "2024-09-18T13:18:03.000Z";
+  :time_coverage_resolution = "PT2.584S";
+  :time_coverage_start = "2024-09-18T13:18:03.000Z";
+  :title = "Arran Back Cove Community Fishers Device Set Deployed at CF542 (MAMKA-7) on 2024-09-18 13:17:52 Down Cast";
+  :Westernmost_Easting = -55.7734161; // double
+}

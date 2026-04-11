@@ -1,0 +1,58 @@
+{
+  "dataset_id": "scalar_1189655",
+  "dds_url": "https://dap.oceannetworks.ca/erddap/tabledap/scalar_1189655.dds",
+  "nc_url": "https://dap.oceannetworks.ca/erddap/tabledap/scalar_1189655.ncCFMA?timeseries_id,time,SIGMA_THETA,density,salinity,sigmaT,latitude,longitude,depth&time>=2013-09-10T16:08:33Z&time<=2014-05-05T18:08:36Z",
+  "header_url": "https://dap.oceannetworks.ca/erddap/tabledap/scalar_1189655.ncCFMAHeader?timeseries_id,time,SIGMA_THETA,density,salinity,sigmaT,latitude,longitude,depth&time>=2013-09-10T16:08:33Z&time<=2014-05-05T18:08:36Z",
+  "request_all_variables": true,
+  "preferred_variables": [
+    "profile_id",
+    "time",
+    "latitude",
+    "longitude",
+    "depth",
+    "pressure",
+    "Temperature",
+    "salinity",
+    "oxygen_saturation",
+    "chlorophyll",
+    "cdom",
+    "turbidity",
+    "density",
+    "cond",
+    "Sound_Speed",
+    "absolute_pressure"
+  ],
+  "required_variables": [
+    "profile_id",
+    "time",
+    "latitude",
+    "longitude",
+    "depth"
+  ],
+  "resolved_variables": [
+    "timeseries_id",
+    "time",
+    "SIGMA_THETA",
+    "density",
+    "salinity",
+    "sigmaT",
+    "latitude",
+    "longitude",
+    "depth"
+  ],
+  "available_variables": [
+    "timeseries_id",
+    "time",
+    "SIGMA_THETA",
+    "density",
+    "salinity",
+    "sigmaT",
+    "latitude",
+    "longitude",
+    "depth"
+  ],
+  "extra_constraints": [
+    "&time>=2013-09-10T16:08:33Z",
+    "&time<=2014-05-05T18:08:36Z"
+  ]
+}

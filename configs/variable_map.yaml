@@ -1,0 +1,80 @@
+# Separate interpretation from ingestion.
+# You can change these mappings and re-run the pipeline without modifying raw data.
+
+variables:
+  profile_id:
+    canonical_name: source_profile_id
+    keep: true
+
+  time:
+    canonical_name: time
+    keep: true
+
+  latitude:
+    canonical_name: latitude
+    keep: true
+
+  longitude:
+    canonical_name: longitude
+    keep: true
+
+  depth:
+    canonical_name: depth_m
+    keep: true
+    canonical_unit: m
+
+  pressure:
+    canonical_name: sea_water_pressure_dbar
+    keep: true
+    canonical_unit: dbar
+
+  absolute_pressure:
+    canonical_name: absolute_pressure_dbar
+    keep: true
+    canonical_unit: dbar
+
+  salinity:
+    canonical_name: practical_salinity_raw
+    keep: true
+    canonical_unit: 1E-03
+
+  Temperature:
+    canonical_name: sea_water_temperature_raw
+    keep: true
+    canonical_unit: K
+    notes: >-
+      Audit this source carefully before applying unit normalization.
+      The sample metadata should not be blindly trusted.
+
+  oxygen_saturation:
+    canonical_name: oxygen_saturation_fraction
+    keep: true
+
+  chlorophyll:
+    canonical_name: chlorophyll_ug_l
+    keep: true
+    canonical_unit: ug/l
+
+  cdom:
+    canonical_name: cdom_ppb_qsde
+    keep: true
+    canonical_unit: ppb QSDE
+
+  turbidity:
+    canonical_name: turbidity_raw
+    keep: true
+
+  density:
+    canonical_name: density_kg_m3
+    keep: true
+    canonical_unit: kg m-3
+
+  cond:
+    canonical_name: conductivity_s_m
+    keep: true
+    canonical_unit: S m-1
+
+  Sound_Speed:
+    canonical_name: sound_speed_m_s
+    keep: true
+    canonical_unit: m s-1

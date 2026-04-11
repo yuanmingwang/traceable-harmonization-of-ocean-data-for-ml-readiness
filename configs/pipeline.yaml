@@ -1,0 +1,92 @@
+project:
+  name: traceable-ocean-data
+  owner: your-team-name
+
+catalog:
+  csv_path: data/catalog/allDataset.csv
+  base_erddap_tabledap: https://dap.oceannetworks.ca/erddap/tabledap
+
+selection:
+  # Keep only rows whose ERDDAP "accessible" value matches this.
+  # With the current ONC catalog snapshot, "public" + "Profile" yields 8 datasets.
+  accessible: public
+  # Keep only these CDM data types from allDataset.csv.
+  # Change this to include other shapes such as TimeSeries or TimeSeriesProfile
+  # if you want a larger download plan.
+  cdm_data_types:
+    # - Profile
+  # Maximum number of selected rows to keep after filtering.
+  # Set to null to keep all matching datasets.
+  limit: 25
+
+request:
+  file_type: ncCFMA
+  header_file_type: ncCFMAHeader
+  # When true, request every variable listed in the dataset's .dds.
+  # This is the simplest setting if your goal is "download the full file".
+  # For .ncCFMA, being explicit is safer than relying on an empty resultsVariables
+  # list because ERDDAP still requires at least one data variable in the request.
+  request_all_variables: true
+  # Preferred variables = "try to request these when available".
+  # This is not a fixed schema. The downloader inspects each dataset's DDS
+  # and keeps only the variables that actually exist for that dataset.
+  # Order matters: variables earlier in the list appear earlier in the request.
+  preferred_variables:
+    - profile_id
+    - time
+    - latitude
+    - longitude
+    - depth
+    - pressure
+    - Temperature
+    - salinity
+    - oxygen_saturation
+    - chlorophyll
+    - cdom
+    - turbidity
+    - density
+    - cond
+    - Sound_Speed
+    - absolute_pressure
+  # Required variables = "must be included if they exist".
+  # These are the core coordinates/identifiers the pipeline expects for profile data.
+  # They are added first, before the remaining preferred variables.
+  # If one of these is missing in a dataset, the downloader will keep going with
+  # the variables that do exist unless stricter validation is added later.
+  required_variables:
+    - profile_id
+    - time
+    - latitude
+    - longitude
+    - depth
+  # When true, fetch each dataset's .dds first and resolve variables per dataset.
+  # Leave this on for mixed catalogs like allDataset.csv.
+  resolve_variables_from_dds: true
+  # If none of the preferred/required variables are found, request all variables
+  # that the DDS exposes instead of failing immediately.
+  include_all_if_no_match: true
+  # When true, append minTime/maxTime from the catalog row as ERDDAP constraints.
+  # This keeps requests tighter and matches the behavior seen in your sample file.
+  use_catalog_time_range: true
+  # When true, skip datasets that fail and continue with the rest.
+  # When false, stop on the first failed dataset.
+  continue_on_error: true
+  # Extra ERDDAP constraints appended to every dataset request, for example:
+  #   - '&depth>=0'
+  #   - '&depth<=100'
+  extra_constraints: []
+  timeout_seconds: 20
+  user_agent: traceable-ocean-capstone/0.1
+
+paths:
+  raw_root: data/raw/onc_erddap
+  manifests_root: data/manifests
+  logs_root: data/logs
+  derived_root: data/derived
+  zarr_path: data/derived/ml_ready_profiles.zarr
+
+harmonization:
+  variable_map_path: configs/variable_map.yaml
+  combine_mode: stack_observations
+  profile_dim: profile
+  obs_dim: obs

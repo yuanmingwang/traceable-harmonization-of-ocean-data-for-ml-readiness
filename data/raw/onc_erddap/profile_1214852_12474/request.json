@@ -1,0 +1,72 @@
+{
+  "dataset_id": "profile_1214852_12474",
+  "dds_url": "https://dap.oceannetworks.ca/erddap/tabledap/profile_1214852_12474.dds",
+  "nc_url": "https://dap.oceannetworks.ca/erddap/tabledap/profile_1214852_12474.ncCFMA?profile_id,absolute_pressure,cdom,chlorophyll,cond,density,depth,oxygen_saturation,pressure,salinity,Sound_Speed,Temperature,turbidity,time,latitude,longitude&time>=2024-09-18T13:18:03Z&time<=2024-09-18T13:18:03Z",
+  "header_url": "https://dap.oceannetworks.ca/erddap/tabledap/profile_1214852_12474.ncCFMAHeader?profile_id,absolute_pressure,cdom,chlorophyll,cond,density,depth,oxygen_saturation,pressure,salinity,Sound_Speed,Temperature,turbidity,time,latitude,longitude&time>=2024-09-18T13:18:03Z&time<=2024-09-18T13:18:03Z",
+  "request_all_variables": true,
+  "preferred_variables": [
+    "profile_id",
+    "time",
+    "latitude",
+    "longitude",
+    "depth",
+    "pressure",
+    "Temperature",
+    "salinity",
+    "oxygen_saturation",
+    "chlorophyll",
+    "cdom",
+    "turbidity",
+    "density",
+    "cond",
+    "Sound_Speed",
+    "absolute_pressure"
+  ],
+  "required_variables": [
+    "profile_id",
+    "time",
+    "latitude",
+    "longitude",
+    "depth"
+  ],
+  "resolved_variables": [
+    "profile_id",
+    "absolute_pressure",
+    "cdom",
+    "chlorophyll",
+    "cond",
+    "density",
+    "depth",
+    "oxygen_saturation",
+    "pressure",
+    "salinity",
+    "Sound_Speed",
+    "Temperature",
+    "turbidity",
+    "time",
+    "latitude",
+    "longitude"
+  ],
+  "available_variables": [
+    "profile_id",
+    "absolute_pressure",
+    "cdom",
+    "chlorophyll",
+    "cond",
+    "density",
+    "depth",
+    "oxygen_saturation",
+    "pressure",
+    "salinity",
+    "Sound_Speed",
+    "Temperature",
+    "turbidity",
+    "time",
+    "latitude",
+    "longitude"
+  ],
+  "extra_constraints": [
+    "&time>=2024-09-18T13:18:03Z",
+    "&time<=2024-09-18T13:18:03Z"
+  ]
+}

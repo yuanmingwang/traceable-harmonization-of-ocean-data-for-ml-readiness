@@ -1,0 +1,168 @@
+netcdf scalar_1192794_9c3f_3bdd_8921.nc {
+  dimensions:
+    timeseries = 1;
+    obs = 2166;
+    timeseries_id_strlen = 14;
+  variables:
+    char timeseries_id(timeseries=1, timeseries_id_strlen=14);
+      :_Encoding = "ISO-8859-1";
+      :cf_role = "timeseries_id";
+      :ioos_category = "Identifier";
+      :long_name = "Dataset Identifier";
+
+    double latitude(timeseries=1);
+      :_CoordinateAxisType = "Lat";
+      :actual_range = 48.316583, 48.316583; // double
+      :axis = "Y";
+      :ioos_category = "Location";
+      :long_name = "Latitude";
+      :standard_name = "latitude";
+      :units = "degrees_north";
+
+    double longitude(timeseries=1);
+      :_CoordinateAxisType = "Lon";
+      :actual_range = -126.050796, -126.050796; // double
+      :axis = "X";
+      :ioos_category = "Location";
+      :long_name = "Longitude";
+      :standard_name = "longitude";
+      :units = "degrees_east";
+
+    double depth(timeseries=1);
+      :_CoordinateAxisType = "Height";
+      :_CoordinateZisPositive = "down";
+      :actual_range = 982.0, 982.0; // double
+      :axis = "Z";
+      :ioos_category = "Location";
+      :long_name = "Depth";
+      :positive = "down";
+      :standard_name = "depth";
+      :units = "m";
+
+    double time(timeseries=1, obs=2166);
+      :_CoordinateAxisType = "Time";
+      :_FillValue = NaN; // double
+      :actual_range = 1.442504691965E9, 1.465886691965E9; // double
+      :axis = "T";
+      :ioos_category = "Time";
+      :long_name = "Time";
+      :standard_name = "time";
+      :time_origin = "01-JAN-1970 00:00:00";
+      :time_precision = "1970-01-01T00:00:00.000Z";
+      :units = "seconds since 1970-01-01T00:00:00Z";
+
+    double sigmaT(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 27.250925637409864, 27.438819570181067; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Sea Water Sigma T";
+      :standard_name = "sea_water_sigma_t";
+      :units = "kg m-3";
+
+    double cond(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 3.17062, 3.23312; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Salinity";
+      :long_name = "Sea Water Electrical Conductivity";
+      :standard_name = "sea_water_electrical_conductivity";
+      :units = "S m-1";
+
+    double density(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 1031.8312511545269, 1032.046100685204; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Sea Water Density";
+      :standard_name = "sea_water_density";
+      :units = "kg m-3";
+
+    double Sound_Speed(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 1478.3, 1481.66; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Speed Of Sound In Sea Water";
+      :standard_name = "speed_of_sound_in_sea_water";
+      :units = "m s-1";
+
+    double Temperature(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 276.21299999999997, 277.0532; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Temperature";
+      :long_name = "Sea Water Temperature";
+      :standard_name = "sea_water_temperature";
+      :units = "K";
+
+    double Pressure(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 990.959, 994.863; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Pressure";
+      :long_name = "Sea Water Pressure Due To Sea Water";
+      :standard_name = "sea_water_pressure_due_to_sea_water";
+      :units = "dbar";
+
+    double salinity(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 34.3147, 34.4482; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Salinity";
+      :long_name = "Sea Water Practical Salinity";
+      :standard_name = "sea_water_practical_salinity";
+      :units = "1e-3";
+
+    double SIGMA_THETA(timeseries=1, obs=2166);
+      :_FillValue = NaN; // double
+      :actual_range = 27.25843403567319, 27.445034684686334; // double
+      :coordinates = "time latitude longitude depth";
+      :ioos_category = "Other";
+      :long_name = "Sea Water Sigma Theta";
+      :standard_name = "sea_water_sigma_theta";
+      :units = "kg m-3";
+
+  // global attributes:
+  :cdm_data_type = "TimeSeries";
+  :cdm_timeseries_variables = "timeseries_id,longitude,depth,latitude";
+  :contributor_name = "Ocean Networks Canada Society,Ocean Networks Canada Society,Ocean Networks Canada Society";
+  :contributor_role = "Custodian,Owner,Publisher";
+  :Conventions = "COARDS, CF-1.10, ACDD-1.3";
+  :device_id = "23583";
+  :device_name = "Sea-Bird SeaCAT SBE19plus V2 7031";
+  :DOI = "https://doi.org/10.34943/cbb587ae-454d-41af-922a-d2c6f5020708";
+  :Easternmost_Easting = -126.050796; // double
+  :featureType = "TimeSeries";
+  :geospatial_lat_max = 48.316583; // double
+  :geospatial_lat_min = 48.316583; // double
+  :geospatial_lat_units = "degrees_north";
+  :geospatial_lon_max = -126.050796; // double
+  :geospatial_lon_min = -126.050796; // double
+  :geospatial_lon_units = "degrees_east";
+  :geospatial_vertical_max = 982.0; // double
+  :geospatial_vertical_min = 982.0; // double
+  :geospatial_vertical_positive = "down";
+  :geospatial_vertical_units = "m";
+  :history = "2026-04-11T03:49:29Z (source database)
+2026-04-11T03:49:29Z https://dap.oceannetworks.ca/erddap/tabledap/scalar_1192794.ncCFMA?timeseries_id,time,sigmaT,cond,density,Sound_Speed,Temperature,Pressure,salinity,SIGMA_THETA,latitude,longitude,depth&time%3E=2015-09-17T13:05:55Z&time%3C=2016-06-14T08:38:38Z";
+  :id = "scalar_1192794";
+  :infoUrl = "https://oceannetworks.ca";
+  :institution = "Ocean Networks Canada Society";
+  :keywords = "Earth Science > Oceans > Ocean Pressure > Water Pressure, Earth Science > Oceans > Ocean Temperature > Water Temperature, Earth Science > Oceans > Salinity/Density";
+  :keywords_vocabulary = "https://vocab.nerc.ac.uk/collection/P64/current/";
+  :license = "Refer to the Ocean Networks Canada data policy at http://www.oceannetworks.ca/data-tools/data-help/data-policy.";
+  :modify_by = "89010";
+  :modify_date = "2020-03-31 20:25:47.877";
+  :Northernmost_Northing = 48.316583; // double
+  :publisher_email = "datastewardship@oceannetworks.ca";
+  :publisher_url = "https://oceannetworks.ca";
+  :sourceUrl = "(source database)";
+  :Southernmost_Northing = 48.316583; // double
+  :summary = "abstract: English = The Sea-Bird SeaCAT SBE19plus V2 7031 was deployed on 2015-09-17 at Barkley Canyon Axis. Barkley Canyon Axis is located within Barkley Canyon, where benthic processes, biodiversity, sediment dynamics are observed. This device is a Conductivity Temperature Depth. Conductivity Temperature Depth (CTD) is an instrument package that contains sensors for measuring the conductivity, temperature, and pressure of seawater. Salinity, sound velocity, depth and density are variables that can be derived from sensor measurements. CTDs can carry additional instruments and sensors such as oxygen sensors, turbidity sensors and fluorometers. It was deployed on a fixed platform. Data from this deployment were archived and made available through Ocean Networks Canada's Oceans 3.0 digital infrastructure, with quality assurance and derived data products following established practices., abstract: French = Ce Sea-Bird SeaCAT SBE19plus V2 7031 a été déployé le 2015-09-17 au Barkley Canyon Axis . Barkley Canyon Axis est situé dans Barkley Canyon, où les processus benthiques, la biodiversité et la dynamique des sédiments sont observés. Cet instrument est un Conductivité/Température/Profondeur. Conductivité Température Profondeur (CTD) est un nom abrégé pour un ensemble d'instruments qui contient des capteurs permettant de mesurer la conductivité, la température et la pression de l'eau de mer. La salinité, la vitesse du son, la profondeur et la densité sont des variables qui peuvent être dérivées des mesures par capteurs. Les CTD peuvent transporter d'autres instruments et capteurs, comme des capteurs d'oxygène, des capteurs de turbidité et des fluoromètres. Il a été deployé sur une plateforme fixe. Les données de ce déploiement sont archivées et accessibles sur l’infrastructure numérique Oceans 3.0 du Réseau Canadien des Océans (ONC), avec assurance de la qualité et produits dérivés selon les conventions établies.";
+  :time_coverage_end = "2016-06-14T06:44:51.965Z";
+  :time_coverage_resolution = "PT4H";
+  :time_coverage_start = "2015-09-17T15:44:51.965Z";
+  :title = "Barkley Canyon Axis Conductivity Temperature Depth Deployed 2015-09-17 | Barkley Canyon Axis  Conductivité/Température/Profondeur déployé 2015-09-17";
+  :Westernmost_Easting = -126.050796; // double
+}

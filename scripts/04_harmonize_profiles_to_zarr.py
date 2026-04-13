@@ -11,7 +11,15 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.traceable_ocean.config import load_yaml
 from src.traceable_ocean.provenance import sha256_file, write_json
-from src.traceable_ocean.harmonize import open_netcdf_any, profile_to_observation_table, apply_variable_map, dataframe_to_zarr
+from src.traceable_ocean.harmonize import (
+    open_netcdf_any,
+    profile_to_observation_table,
+    apply_variable_map,
+    build_observation_lineage_table,
+    build_variable_lineage_map,
+    dataframe_to_zarr,
+    write_variable_lineage_json,
+)
 
 
 def main() -> None:
@@ -27,6 +35,7 @@ def main() -> None:
 
     frames = []
     lineage_rows = []
+    variable_lineage_map = {}
 
     for dataset_dir in sorted(p for p in raw_root.iterdir() if p.is_dir()):
         nc_path = dataset_dir / 'source.nc'
@@ -41,6 +50,7 @@ def main() -> None:
 
         source_sha = sha256_file(nc_path)
         df = profile_to_observation_table(ds, str(nc_path), source_sha)
+        variable_lineage_map.update(build_variable_lineage_map(df, variable_map))
         df = apply_variable_map(df, variable_map)
         df['dataset_id'] = ds.attrs.get('id', dataset_dir.name)
         frames.append(df)
@@ -62,17 +72,31 @@ def main() -> None:
     dataframe_to_zarr(combined, zarr_path)
     lineage_path = manifests_root / 'lineage.csv'
     pd.DataFrame(lineage_rows).to_csv(lineage_path, index=False)
+    observation_lineage_path = manifests_root / 'observation_lineage.csv'
+    build_observation_lineage_table(combined).to_csv(observation_lineage_path, index=False)
+    variable_lineage_path = manifests_root / 'variable_lineage.json'
+    write_variable_lineage_json(variable_lineage_path, variable_lineage_map)
 
     run_manifest = {
         'zarr_path': str(zarr_path),
         'row_count': int(len(combined)),
         'columns': list(combined.columns),
         'lineage_csv': str(lineage_path),
+        'observation_lineage_csv': str(observation_lineage_path),
+        'variable_lineage_json': str(variable_lineage_path),
         'variable_map_path': cfg['harmonization']['variable_map_path'],
+        'traceability': {
+            'row_key_column': 'lineage_record_id',
+            'source_profile_column': 'source_profile_id',
+            'source_indices': ['source_profile_index', 'source_obs_index'],
+            'variable_lineage_lookup': 'Use variable_lineage.json to map each canonical Zarr variable to its raw source variable and transformation steps.',
+        },
     }
     write_json(manifests_root / 'latest_harmonization_run.json', run_manifest)
     print(f'Wrote Zarr store to {zarr_path}')
     print(f'Wrote lineage table to {lineage_path}')
+    print(f'Wrote observation lineage table to {observation_lineage_path}')
+    print(f'Wrote variable lineage map to {variable_lineage_path}')
 
 
 if __name__ == '__main__':

@@ -121,8 +121,10 @@ def compare_with_source(ds_zarr: xr.Dataset, source_nc: Path) -> int:
         print('[WARN] Cannot filter by source_file because source_file is missing in the Zarr store.')
         return errors
 
+    source_file_values = ds_zarr['source_file'].astype(str).values
     source_name = source_nc.name
-    mask = (ds_zarr['source_file'].astype(str).values == source_name)
+    source_full = str(source_nc)
+    mask = (source_file_values == source_full) | np.char.endswith(source_file_values, f'/{source_name}')
     actual_rows = int(mask.sum())
     print(f'Rows in Zarr referencing this source_file: {actual_rows}')
     if actual_rows != expected_rows:
@@ -131,7 +133,7 @@ def compare_with_source(ds_zarr: xr.Dataset, source_nc: Path) -> int:
     else:
         print('[OK] Row count matches source profile*obs.')
 
-    src_df = profile_to_observation_table(ds_nc, source_name)
+    src_df = profile_to_observation_table(ds_nc, source_full)
     src_cols = set(src_df.columns)
 
     variable_pairs = [
